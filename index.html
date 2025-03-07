@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Assignment</title>
+	</head>
+	<body>
+		<script>
+			let num1 = parseFloat(prompt('Introdu primul număr:')); // Primul număr
+			let operator = prompt('Introdu operatorul (+, -, *, /)'); // Operator
+			let num2 = parseFloat(prompt('Introdu al doilea număr:')); // Al doilea număr
+			let rezultat; // Rezultatul
+
+			// Validare date si afisare rezulat
+			if (isNaN(num1) || isNaN(num2)) {
+				alert('Eroare: Introduceți numere valide!');
+			} else {
+				switch (operator) {
+					case '+':
+						rezultat = num1 + num2;
+						break;
+					case '-':
+						rezultat = num1 - num2;
+						break;
+					case '*':
+						rezultat = num1 * num2;
+						break;
+					case '/':
+						if (num2 !== 0) {//
+							rezultat = num1 / num2;
+						} else {
+							alert('Eroare: Împărțirea la zero nu este permisă!');
+							rezultat = 'Eroare';
+						}
+						break;
+					default:
+						alert('Eroare: Operator invalid!');
+						rezultat = 'Eroare';
+				}
+
+				// Afisare rezultat
+				if (rezultat !== 'Eroare') {
+					alert('Rezultatul este: ' + rezultat);
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Color Ring Animation</title>
+		<style>
+			body {
+				margin: 0;
+				background: black;
+				height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.circle1 {
+				position: relative;
+				width: 180px;
+				height: 180px;
+				border-radius: 50%;
+				background-color: #ffffff;
+				z-index: 1;
+				overflow: visible;
+			}
+
+			.circle2 {
+				position: absolute;
+				top: 10%;
+				left: 10%;
+				width: 80%;
+				height: 80%;
+				border-radius: 50%;
+				background-color: #010003;
+			}
+
+			.circle3 {
+				position: absolute;
+				top: 7%;
+				left: 7%;
+				width: 85%;
+				height: 85%;
+				border-radius: 50%;
+				background-color: #09041d;
+				animation: expand 2s ease-out infinite;
+			}
+
+			.circle1::before {
+				content: '';
+				position: absolute;
+				top: -5px;
+				left: -5px;
+				width: 190px;
+				height: 190px;
+				border-radius: 50%;
+				background: conic-gradient(#fb5dad, #55fb9f, #b97aff, #fb5dad, #55fb9f, #b97aff);
+				animation: spin 1s linear infinite;
+				filter: blur(12px);
+				z-index: -1;
+			}
+
+			@keyframes spin {
+				0% {
+					transform: rotate(0deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+
+			@keyframes expand {
+				0% {
+					transform: scale(0);
+					opacity: 1;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="circle1">
+			<div class="circle2">
+				<div class="circle3"></div>
+			</div>
+		</div>
+	</body>
+</html>
